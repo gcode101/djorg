@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 3rd party app
     'rest_framework',
+    'bootstrap4',
     #MY Apps
     'bookmarks',
     'notes',
