@@ -1,6 +1,7 @@
 <h1>Bookmarks</h1>
 
 {% if bookmarks %}
+<h2>Public</h2>
 <ol>
 	{% for bookmark in bookmarks %}
 		<li>
@@ -14,7 +15,7 @@
 
 
 {% if personal_bookmarks %}
-<h1>Personal Bookmarks</h1>
+<h2>Personal</h2>
 <ol>
 	{% for bookmark in personal_bookmarks %}
 		<li>
@@ -25,3 +26,10 @@
 {% else %}
 	<p>No personal bookmarks available - you should add some!</p>
 {% endif %}
+
+<h2>New Bookmark</h2>
+<form method="POST" class="bookmark-from">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit" class="save btn btn-default">Save</button>
+</form>
